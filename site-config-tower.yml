@@ -1,3 +1,6 @@
+# come variables value like opetlc_password , tower_GUID , opentlc_login etc
+# which are use by config-tower role are sent through command line
+
 - hosts: localhost
   gather_facts: false 
   become: yes 

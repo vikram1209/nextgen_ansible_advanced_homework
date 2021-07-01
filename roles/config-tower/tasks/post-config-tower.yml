@@ -1,6 +1,6 @@
 - name: Create Homework Assignment project
   tower_project:
-    name: "Vikram_final"
+    name: "{{proj_name}}"
     description: "from config-tower"
     organization: "Default"
     state: present

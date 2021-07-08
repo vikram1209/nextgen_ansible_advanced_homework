@@ -16,12 +16,12 @@
      return_content: yes
     with_items:
       - "{{ info.ansible_facts.openstack_servers }}"
-    register: webpage
+    register: webpage_result
     tags:
       - osp.smoke
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
-    when: "'Ansible has done its job' not in webpage.results[0].content"
+    when: "'Ansible has done its job' not in webpage_result.results[0].content"
     tags:
       - osp.smoke

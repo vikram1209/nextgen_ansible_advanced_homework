@@ -6,7 +6,7 @@
     os_server_info:
      cloud: openstack
      server: 'frontend'
-    register: openstack_info
+    register: info
     tags:
       - osp.smoke
 
@@ -15,7 +15,7 @@
      url: "http://{{item.public_v4}}"
      return_content: yes
     with_items:
-      - "{{ openstack_info.ansible_facts.openstack_servers }}"
+      - "{{ info.ansible_facts.openstack_servers }}"
     register: webpage
     tags:
       - osp.smoke
